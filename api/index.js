@@ -197,8 +197,9 @@ app.get("/episode-servers", async (req, res) => {
         dub: (serverData.dub || [])
           .filter(
             (server) =>
-              server.serverName !== "streamtape" &&
-              server.serverName !== "streamsb"
+              server.serverName.toLowerCase()  !== "streamtape" &&
+              server.serverName.toLowerCase()  !== "streamsb" &&
+              server.serverName.toLowerCase() !== "hd-3"
           )
           .map((server) => server.serverName),
       };
