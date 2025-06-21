@@ -237,9 +237,7 @@ app.get("/episode-sources-from-server", async (req, res) => {
       res.send({
         serverName: serverName,
         sources: sourcesData.sources,
-        captions: sourcesData.tracks.filter(
-          (track) => track.kind === "captions"
-        ),
+        captions: sourcesData.tracks,
         intro: sourcesData.intro,
         outro: sourcesData.outro,
       });
